@@ -560,13 +560,21 @@ section.post-content h4 {
   margin-top: 33px;
   margin-bottom: -6px;
 }
-section.post-content h4 {
+section.post-content > h4 {  
+  /* Direct childs only, don't affect h4 in figcaption */
   font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
   font-size: 23px;
   text-transform: uppercase;
   font-weight: 300;
 }
-
+section.post-content figcaption h4 {
+  font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
+  font-size: .9em;
+  font-weight: 100;
+  text-transform: uppercase;
+  text-align: right;
+  margin: .5em 0 2em 0;
+}
 a, a:active, a:focus {
   outline: none;
 }
