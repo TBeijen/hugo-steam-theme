@@ -12,6 +12,11 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
+    <!-- Allow/disallow robots -->
+    {{ with .Site.Params.metaRobots -}}
+    <meta name="robots" content="{{ . }}">
+    {{ end -}}
+    
     <!-- Start of Open Graph -->
     <meta property="og:title" content="{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
     {{ if .IsPage -}}
