@@ -42,7 +42,9 @@
     <meta name="twitter:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
     <meta name="twitter:site" content="{{ $.Site.BaseURL }}" />
     <meta name="twitter:creator" content="{{ $.Site.Params.author }}" />
-    <meta name="twitter:image" content="{{ with .Params.images }}{{ end }}">
+    {{ if .Params.thumbnail -}}
+    <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}">
+    {{ end -}}
 
     {{ "<!-- RSS autodiscovery -->" | safeHTML }}
     {{ with .OutputFormats.Get "RSS" }}
