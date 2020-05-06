@@ -1,0 +1,4 @@
+User-agent: * 
+{{ if .Site.Params.blockIndex -}}
+Disallow: /
+{{ end -}}

@@ -13,8 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
     <!-- Allow/disallow robots -->
-    {{ with .Site.Params.metaRobots -}}
-    <meta name="robots" content="{{ . }}">
+    {{ if .Site.Params.blockIndex -}}
+    <meta name="robots" content="noindex">
     {{ end -}}
     
     <!-- Start of Open Graph -->
