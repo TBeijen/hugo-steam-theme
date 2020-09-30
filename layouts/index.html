@@ -5,8 +5,10 @@
     {{ partial "navigation" . }}
 
     <main class="content" role="main">
-    	{{ if .Site.Params.homeMaxPosts }}
-            {{ range first .Site.Params.homeMaxPosts (where .Data.Pages.ByDate.Reverse "Type" "post") }}
+		
+		{{ if .Site.Params.homeMaxPosts }}
+			{{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}
+			{{ range first .Site.Params.homeMaxPosts $paginator.Pages }}
 				{{ partial "post-list-item" . }}
 			{{ end }}
 			<nav class="pagination" role="pagination">

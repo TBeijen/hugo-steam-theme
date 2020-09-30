@@ -25,11 +25,11 @@
 		    {{ with .Site.Params.bitbucket }}
 		    <a href="//bitbucket.org/{{ . }}" target="_blank" title="Bitbucket"><i class="fa fa-2x fa-fw fa-bitbucket"></i> <span class="hidden">Bitbucket</span></a>&nbsp;
 		    {{ end }}
-		    {{ with .RSSlink }}
-		    <a href="{{ . }}" target="_blank" title="RSS"><i class="fa fa-2x fa-fw fa-rss"></i> <span class="hidden">RSS</span></a>
-		    {{ end }}
+			{{ with .OutputFormats.Get "RSS" }}
+		    <a href="{{ .RelPermalink }}" target="_blank" title="RSS"><i class="fa fa-2x fa-fw fa-rss"></i> <span class="hidden">RSS</span></a>
+			{{ end }}
 		</section>
 
-		<section class="copyright">&copy; {{.Now.Format "2006"}} <a href="{{ .Site.BaseURL }}">{{ .Site.Params.name }}</a>. {{ .Site.Params.copyright | markdownify }}</section>
+		<section class="copyright">&copy; {{now.Format "2006"}} <a href="{{ .Site.BaseURL }}">{{ .Site.Params.name }}</a>. {{ .Site.Params.copyright | markdownify }}</section>
 	</div>
 </footer>
